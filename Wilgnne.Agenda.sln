@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{37494442-C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wilgnne.Agenda.Api", "Wilgnne.Agenda.Api\Wilgnne.Agenda.Api.csproj", "{E5A74BA1-F5CE-4ADA-B13F-C6F3AB20518E}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{33557A28-D93F-48A7-86CE-632BF217224F}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wilgnne.Agenda.Infra", "Wilgnne.Agenda.Infra\Wilgnne.Agenda.Infra.csproj", "{691141DE-E6B6-41F4-AE5C-8987DA4A4F07}"
 EndProject
 Global
@@ -22,6 +24,10 @@ Global
 		{E5A74BA1-F5CE-4ADA-B13F-C6F3AB20518E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5A74BA1-F5CE-4ADA-B13F-C6F3AB20518E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5A74BA1-F5CE-4ADA-B13F-C6F3AB20518E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33557A28-D93F-48A7-86CE-632BF217224F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33557A28-D93F-48A7-86CE-632BF217224F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33557A28-D93F-48A7-86CE-632BF217224F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33557A28-D93F-48A7-86CE-632BF217224F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{691141DE-E6B6-41F4-AE5C-8987DA4A4F07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{691141DE-E6B6-41F4-AE5C-8987DA4A4F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{691141DE-E6B6-41F4-AE5C-8987DA4A4F07}.Release|Any CPU.ActiveCfg = Release|Any CPU

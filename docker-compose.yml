@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  wilgnne.agenda.api:
+    image: ${DOCKER_REGISTRY-}wilgnneagendaapi
+    build:
+      context: .
+      dockerfile: Wilgnne.Agenda.Api/Dockerfile
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest

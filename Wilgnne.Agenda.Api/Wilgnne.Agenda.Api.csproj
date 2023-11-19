@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Wilgnne.Agenda.Infra\Wilgnne.Agenda.Infra.csproj" />
+    <ProjectReference Include="..\Wilgnne.Agenda.Application\Wilgnne.Agenda.Application.csproj" />
   </ItemGroup>
 
 </Project>

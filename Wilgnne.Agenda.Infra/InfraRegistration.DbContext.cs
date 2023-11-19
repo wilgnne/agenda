@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Wilgnne.Agenda.Infra.DbContext.AgendaContext;
+using Wilgnne.Agenda.Infra.Persistence.Repositories;
 
 namespace Wilgnne.Agenda.Infra
 {
@@ -14,7 +15,8 @@ namespace Wilgnne.Agenda.Infra
                 .AddDbContextPool<AgendaContext>(
                     (s, o) => o.UseSqlServer(configuration.GetConnectionString("AgendaContext"))
                                .UseLoggerFactory(s.GetRequiredService<ILoggerFactory>()))
-                .AddHostedService<AgendaMigrationService>();
+                .AddHostedService<AgendaMigrationService>()
+                .AddRepositories();
         }
     }
 }

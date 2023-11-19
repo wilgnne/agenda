@@ -1,3 +1,4 @@
+using Wilgnne.Agenda.Application;
 using Wilgnne.Agenda.Infra;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Logging.AddInfraLoggings();
-builder.Services.AddInfraServices(builder.Configuration);
+builder.Services.AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
 

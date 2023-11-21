@@ -17,6 +17,8 @@ namespace Wilgnne.Agenda.Infra
               .ConfigureResource(resource => resource.AddService(serviceName))
               .WithTracing(tracing => tracing
                   .AddAspNetCoreInstrumentation()
+                  .AddSqlClientInstrumentation(
+                      options => options.SetDbStatementForText = true)
                   .AddConsoleExporter()
                   .AddZipkinExporter(o =>
                   {
@@ -27,7 +29,7 @@ namespace Wilgnne.Agenda.Infra
                           return client;
                       };
 
-                      o.Endpoint = new Uri("http://zipkin:9411/api/v2/spans");
+                      o.Endpoint = new Uri("http://localhost:9411/api/v2/spans");
                   }))
               .WithMetrics(metrics => metrics
                   .AddAspNetCoreInstrumentation()

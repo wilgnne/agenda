@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Wilgnne.Agenda.Api/bin/Debug/net8.0/Wilgnne.Agenda.Api.dll",
+            "program": "${workspaceFolder}/backend/Wilgnne.Agenda.Api/bin/Debug/net8.0/Wilgnne.Agenda.Api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Wilgnne.Agenda.Api",
+            "cwd": "${workspaceFolder}/backend/Wilgnne.Agenda.Api",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
@@ -21,7 +21,7 @@
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
-                "/Views": "${workspaceFolder}/Views"
+                "/Views": "${workspaceFolder}/backend/Views"
             }
         },
         {

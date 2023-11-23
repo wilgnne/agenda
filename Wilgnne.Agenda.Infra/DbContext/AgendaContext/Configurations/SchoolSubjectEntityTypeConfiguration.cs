@@ -14,6 +14,11 @@ namespace Wilgnne.Agenda.Infra.DbContext.AgendaContext.Configurations
             builder
                 .Property(e => e.Subject)
                 .IsRequired();
+
+            builder
+                .HasMany(e => e.SubjectEvents)
+                .WithOne(e => e.Subject)
+                .HasForeignKey((e) => e.SchoolSubjectId);
         }
     }
 }

@@ -8,7 +8,8 @@ namespace Wilgnne.Agenda.Infra.Persistence.Repositories
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             return services
-                .AddScoped<IRepository<SchoolSubject>, SchoolSubjectRepository>();
+                .AddScoped<IRepository<SchoolSubject>, SchoolSubjectRepository>()
+                .AddScoped<IRepository<SchoolSubjectEvent>, SchoolSubjectEventRepository>();
         }
     }
 }

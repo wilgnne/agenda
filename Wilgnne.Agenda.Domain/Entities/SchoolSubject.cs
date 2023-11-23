@@ -4,5 +4,7 @@
     {
         public Guid Id { get; set; }
         public string Subject { get; set; } = subject;
+
+        public ICollection<SchoolSubjectEvent> SubjectEvents = default!;
     }
 }

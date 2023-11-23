@@ -7,6 +7,7 @@ namespace Wilgnne.Agenda.Infra.DbContext.AgendaContext
     public class AgendaContext(DbContextOptions<AgendaContext> options) : Microsoft.EntityFrameworkCore.DbContext(options)
     {
         public DbSet<SchoolSubject> SchoolSubjects { get; private set; }
+        public DbSet<SchoolSubjectEvent> SchoolSubjectEvents { get; private set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

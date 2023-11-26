@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wilgnne.Agenda.Api", "Wilgn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wilgnne.Agenda.Application", "Wilgnne.Agenda.Application\Wilgnne.Agenda.Application.csproj", "{45A1F49C-1844-4777-8716-5AF620DD1417}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wilgnne.Agenda.Application.Tests", "Wilgnne.Agenda.Application.Tests\Wilgnne.Agenda.Application.Tests.csproj", "{22E70A56-4BD1-46CB-A0DF-D34F67C2EF32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{45A1F49C-1844-4777-8716-5AF620DD1417}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45A1F49C-1844-4777-8716-5AF620DD1417}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45A1F49C-1844-4777-8716-5AF620DD1417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E70A56-4BD1-46CB-A0DF-D34F67C2EF32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E70A56-4BD1-46CB-A0DF-D34F67C2EF32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E70A56-4BD1-46CB-A0DF-D34F67C2EF32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E70A56-4BD1-46CB-A0DF-D34F67C2EF32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

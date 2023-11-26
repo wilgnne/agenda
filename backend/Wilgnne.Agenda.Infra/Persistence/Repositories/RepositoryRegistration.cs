@@ -8,8 +8,18 @@ namespace Wilgnne.Agenda.Infra.Persistence.Repositories
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             return services
-                .AddScoped<IRepository<SchoolSubject>, SchoolSubjectRepository>()
-                .AddScoped<IRepository<SchoolSubjectEvent>, SchoolSubjectEventRepository>();
+                .AddRepository<SchoolSubject, SchoolSubjectRepository>()
+                .AddRepository<SchoolSubjectEvent, SchoolSubjectEventRepository>()
+                .AddRepository<ApplicationUser, ApplicationUserRepository>();
+        }
+
+        private static IServiceCollection AddRepository<E, T>(this IServiceCollection services)
+         where T : class, IRepository<E>
+        {
+            return services
+                .AddScoped<IRepository<E>, T>()
+                .AddScoped<IInsertRespository<E>>(x => x.GetRequiredService<IRepository<E>>())
+                .AddScoped<IGetAllRespotory<E>>(x => x.GetRequiredService<IRepository<E>>());
         }
     }
 }

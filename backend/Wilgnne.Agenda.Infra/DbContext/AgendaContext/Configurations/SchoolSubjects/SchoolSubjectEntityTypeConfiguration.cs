@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Wilgnne.Agenda.Domain.Entities;
 
@@ -19,6 +19,11 @@ public class SchoolSubjectEntityTypeConfiguration : IEntityTypeConfiguration<Sch
             .HasMany(e => e.SubjectEvents)
             .WithOne(e => e.Subject)
             .HasForeignKey((e) => e.SchoolSubjectId);
+
+        builder
+           .HasMany(e => e.WeekSettings)
+           .WithOne(e => e.SchoolSubject)
+           .HasForeignKey(e => e.SchoolSubjectId);
 
         builder
             .HasOne(e => e.User)

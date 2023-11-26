@@ -6,3 +6,5 @@ RUN wget -O dotnet.tar.gz https://download.visualstudio.microsoft.com/download/p
     && mkdir -p /usr/share/dotnet \
     && tar -zxf dotnet.tar.gz -C /usr/share/dotnet \
     && rm dotnet.tar.gz
+
+RUN dotnet tool install --global dotnet-ef

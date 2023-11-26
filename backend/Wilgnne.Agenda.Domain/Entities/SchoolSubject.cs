@@ -1,4 +1,4 @@
-namespace Wilgnne.Agenda.Domain.Entities
+﻿namespace Wilgnne.Agenda.Domain.Entities
 {
     public class SchoolSubject(string subject)
     {
@@ -9,5 +9,6 @@ namespace Wilgnne.Agenda.Domain.Entities
         public ApplicationUser User { get; set; } = default!;
 
         public ICollection<SchoolSubjectEvent> SubjectEvents { get; set; } = default!;
+        public ICollection<SchoolSubjectWeekSetting> WeekSettings { get; set; } = default!;
     }
 }

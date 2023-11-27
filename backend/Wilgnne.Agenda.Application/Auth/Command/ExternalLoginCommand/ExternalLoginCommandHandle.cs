@@ -2,7 +2,7 @@
 using Wilgnne.Agenda.Domain.Entities;
 using Wilgnne.Agenda.Infra.Persistence.Repositories;
 
-namespace Wilgnne.Agenda.Application;
+namespace Wilgnne.Agenda.Application.Auth.Command.ExternalLoginCommand;
 
 public class ExternalLoginCommandHandle : IRequestHandler<ExternalLoginCommand, ExternalLoginCommandResponse>
 {

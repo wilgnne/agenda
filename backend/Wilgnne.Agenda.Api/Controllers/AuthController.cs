@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Wilgnne.Agenda.Application;
+using Wilgnne.Agenda.Application.Auth.Command.ExternalLoginCommand;
 
 namespace Wilgnne.Agenda.Api.Controllers;
 

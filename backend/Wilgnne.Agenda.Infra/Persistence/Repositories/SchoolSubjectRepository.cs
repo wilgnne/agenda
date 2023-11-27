@@ -24,5 +24,18 @@ namespace Wilgnne.Agenda.Infra.Persistence.Repositories
                 return entities.AsEnumerable();
             });
         }
+
+        public async Task Edit(Guid Id, object item)
+        {
+            var entity = context.SchoolSubjects.Find(Id);
+            if (entity == null)
+            {
+                return;
+            }
+
+            context.Entry(entity).CurrentValues.SetValues(item);
+
+            await context.SaveChangesAsync();
+        }
     }
 }

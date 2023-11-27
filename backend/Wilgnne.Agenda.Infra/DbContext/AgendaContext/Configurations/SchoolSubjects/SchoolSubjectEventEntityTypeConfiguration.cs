@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Wilgnne.Agenda.Domain.Entities;
 
-namespace Wilgnne.Agenda.Infra.DbContext.AgendaContext.Configurations;
+namespace Wilgnne.Agenda.Infra.DbContext.AgendaContext.Configurations.SchoolSubjects;
 
 public class SchoolSubjectEventEntityTypeConfiguration : IEntityTypeConfiguration<SchoolSubjectEvent>
 {

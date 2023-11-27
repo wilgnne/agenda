@@ -24,4 +24,9 @@ public class ApplicationUserRepository(AgendaContext context) : IRepository<Appl
             return entities.AsEnumerable();
         });
     }
+
+    public Task Edit(Guid Id, object item)
+    {
+        throw new NotImplementedException();
+    }
 }

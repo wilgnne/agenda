@@ -26,13 +26,14 @@ public class InsertSchoolSubjectCommandHandleTests
     {
         // Arrange
         var subject = "new subject";
+        var userId = Guid.NewGuid();
         A.CallTo(_repository)
         .WithReturnType<Task<SchoolSubject>>()
-        .Returns(Task.FromResult(new SchoolSubject(subject)));
+        .Returns(Task.FromResult(new SchoolSubject(userId, subject)));
 
         //Act
         var result = await _service.Handle(
-            new InsertSchoolSubjectCommand(subject),
+            new InsertSchoolSubjectCommand(userId, subject),
             new CancellationToken()
         );
 

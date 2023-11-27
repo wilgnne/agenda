@@ -2,5 +2,5 @@
 
 namespace Wilgnne.Agenda.Application.SchoolSubjects.Command.InsertSchoolSubjectCommand
 {
-    public record InsertSchoolSubjectCommand(string Subject) : IRequest<InsertSchoolSubjectCommandResponse>;
+    public record InsertSchoolSubjectCommand(Guid UserId, string Subject) : IRequest<InsertSchoolSubjectCommandResponse>;
 }

@@ -19,7 +19,8 @@ namespace Wilgnne.Agenda.Infra.Persistence.Repositories
             return services
                 .AddScoped<IRepository<E>, T>()
                 .AddScoped<IInsertRespository<E>>(x => x.GetRequiredService<IRepository<E>>())
-                .AddScoped<IGetAllRespotory<E>>(x => x.GetRequiredService<IRepository<E>>());
+                .AddScoped<IGetAllRespotory<E>>(x => x.GetRequiredService<IRepository<E>>())
+                .AddScoped<IEditRepository<E>>(x => x.GetRequiredService<IRepository<E>>());
         }
     }
 }

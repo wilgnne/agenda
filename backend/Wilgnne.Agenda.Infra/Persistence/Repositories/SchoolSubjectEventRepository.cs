@@ -24,5 +24,10 @@ namespace Wilgnne.Agenda.Infra.Persistence.Repositories
                 return entities.AsEnumerable();
             });
         }
+
+        public Task Edit(Guid Id, object item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

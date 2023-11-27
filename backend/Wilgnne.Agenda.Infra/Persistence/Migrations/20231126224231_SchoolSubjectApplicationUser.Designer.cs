@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Wilgnne.Agenda.Infra.DbContext.AgendaContext;
 
@@ -11,9 +12,11 @@ using Wilgnne.Agenda.Infra.DbContext.AgendaContext;
 namespace Wilgnne.Agenda.Infra.Persistence.Migrations
 {
     [DbContext(typeof(AgendaContext))]
-    partial class AgendaContextModelSnapshot : ModelSnapshot
+    [Migration("20231126224231_SchoolSubjectApplicationUser")]
+    partial class SchoolSubjectApplicationUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,50 +93,6 @@ namespace Wilgnne.Agenda.Infra.Persistence.Migrations
                     b.ToTable("SchoolSubjectEvents");
                 });
 
-            modelBuilder.Entity("Wilgnne.Agenda.Domain.Entities.SchoolSubjectSchedule", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<TimeSpan>("EndTime")
-                        .HasColumnType("time");
-
-                    b.Property<TimeSpan>("StartTime")
-                        .HasColumnType("time");
-
-                    b.Property<int>("WeekDay")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("WeekSettingId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("WeekSettingId");
-
-                    b.ToTable("SchoolSubjectSchedule");
-                });
-
-            modelBuilder.Entity("Wilgnne.Agenda.Domain.Entities.SchoolSubjectWeekSetting", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Order")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("SchoolSubjectId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SchoolSubjectId");
-
-                    b.ToTable("SchoolSubjectWeekSetting");
-                });
-
             modelBuilder.Entity("Wilgnne.Agenda.Domain.Entities.SchoolSubject", b =>
                 {
                     b.HasOne("Wilgnne.Agenda.Domain.Entities.ApplicationUser", "User")
@@ -156,28 +115,6 @@ namespace Wilgnne.Agenda.Infra.Persistence.Migrations
                     b.Navigation("Subject");
                 });
 
-            modelBuilder.Entity("Wilgnne.Agenda.Domain.Entities.SchoolSubjectSchedule", b =>
-                {
-                    b.HasOne("Wilgnne.Agenda.Domain.Entities.SchoolSubjectWeekSetting", "WeekSetting")
-                        .WithMany("SubjectSchedules")
-                        .HasForeignKey("WeekSettingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("WeekSetting");
-                });
-
-            modelBuilder.Entity("Wilgnne.Agenda.Domain.Entities.SchoolSubjectWeekSetting", b =>
-                {
-                    b.HasOne("Wilgnne.Agenda.Domain.Entities.SchoolSubject", "SchoolSubject")
-                        .WithMany("WeekSettings")
-                        .HasForeignKey("SchoolSubjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("SchoolSubject");
-                });
-
             modelBuilder.Entity("Wilgnne.Agenda.Domain.Entities.ApplicationUser", b =>
                 {
                     b.Navigation("SchoolSubjects");
@@ -186,13 +123,6 @@ namespace Wilgnne.Agenda.Infra.Persistence.Migrations
             modelBuilder.Entity("Wilgnne.Agenda.Domain.Entities.SchoolSubject", b =>
                 {
                     b.Navigation("SubjectEvents");
-
-                    b.Navigation("WeekSettings");
-                });
-
-            modelBuilder.Entity("Wilgnne.Agenda.Domain.Entities.SchoolSubjectWeekSetting", b =>
-                {
-                    b.Navigation("SubjectSchedules");
                 });
 #pragma warning restore 612, 618
         }

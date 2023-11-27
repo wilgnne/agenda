@@ -12,7 +12,12 @@ namespace Wilgnne.Agenda.Infra.Persistence.Repositories
         public Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> predicate);
     }
 
-    public interface IRepository<T> : IInsertRespository<T>, IGetAllRespotory<T>
+    public interface IEditRepository<T>
+    {
+        public Task Edit(Guid Id, object item);
+    }
+
+    public interface IRepository<T> : IInsertRespository<T>, IGetAllRespotory<T>, IEditRepository<T>
     {
 
     }
